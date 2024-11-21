@@ -1,11 +1,9 @@
 'use client'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardDescription ,CardTitle } from "@/components/ui/card"
-import { MessageSquare, Users, Lock, Zap } from 'lucide-react'
+import { MessageSquare} from 'lucide-react'
 import "./main.css"
 import  {register} from "./main"
-import { text } from "stream/consumers"
 
 var email = ""
 var password = ""
@@ -53,6 +51,9 @@ export default function LandingPage() {
   }
 function create_error(text: string){
   const err = document.getElementById("error")
+  if(err==null){
+    return
+  }
   err.className = "border-*"
   err.innerHTML = ""
   const p = document.createElement("p")
@@ -64,6 +65,9 @@ function create_error(text: string){
 
 function create_succes(text: string){
   const err = document.getElementById("error")
+  if(err==null){
+    return
+  }
   err.className = "border-*"
   err.innerHTML = ""
   const p = document.createElement("p")

@@ -2,7 +2,6 @@
 
 import { AuthError, createClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
-import { json } from 'stream/consumers';
 const supabase = createClient(process.env.HOST, process.env.ANON)
     
 export async function register(email , password){
