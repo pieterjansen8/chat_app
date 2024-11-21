@@ -5,8 +5,8 @@ import { MessageSquare} from 'lucide-react'
 import "./main.css"
 import  {register} from "./main"
 
-var email = ""
-var password = ""
+let email = ""
+let password = ""
 
 export default function LandingPage() {
     return (
@@ -78,7 +78,6 @@ function create_succes(text: string){
 }
 
 async function trigger(){
-  const btn = document.getElementById("btn")
   const r = await register(email, password)
   if(r != undefined){
     create_error(r.message)

@@ -1,6 +1,6 @@
 'use server';
 
-import { AuthError, createClient } from '@supabase/supabase-js'
+import {createClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 const supabase = createClient(process.env.HOST, process.env.ANON)
     
@@ -18,6 +18,7 @@ export async function register(email , password){
         email: email,
         password: password,
     })
+    if(data)
     if(error != null){
         return error
     }
